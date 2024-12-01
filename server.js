@@ -8,7 +8,7 @@ const FeedbackRoutes = require('./routes/FeedbackRoutes');
 const ChildrenRoutes = require('./routes/ChildrenRoutes');
 const ProductRoutes = require('./routes/ProductRoutes');
 const OrderRoutes = require('./routes/OrderRoutes');
-const PaymentRoutes = require('./routes/PaymentRoutes');
+const PaymentRoutes = require('./routes/paymentRoutes');
 const CustomerRoutes = require('./routes/CustomerRoutes');
 
 const app = express();
