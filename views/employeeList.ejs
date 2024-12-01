@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách nhân viên</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/sidebar') %>
+
+    <div class="main-content">
+        <header>
+            <h2>Thông tin nhân viên</h2>
+            <input type="text" id="search-bar" placeholder="Tìm kiếm nhân viên...">
+            <select id="department-filter">
+                <option value="">Chọn phòng ban</option>
+            </select>
+            <input type="text" id="id-search" placeholder="Tìm theo Mã Nhân viên">
+            <button id="id-search-btn">Lọc</button>
+            <button onclick="window.location.href='/employee/add'">Thêm Nhân viên mới</button>  
+            <button id ="refresh">Làm mới</button>
+        </header>
+        
+        <section class="employee-table">
+            <table id="employee-table">
+                <thead>
+                    <tr>
+                        <th>Mã nhân viên</th>
+                        <th>Tên nhân viên</th>
+                        <th>Ngày tham gia</th>
+                        <th>Phòng ban</th>
+                        <th>Số điện thoại</th>
+                        <th>Email</th>
+                        <th>Địa chỉ</th>
+                    </tr>
+                </thead>
+                <tbody id="employee-data">
+                </tbody>
+            </table>
+        </section>
+        <div id="context-menu" class="context-menu">
+            <ul>
+                <li id="delete-employee">Xóa nhân viên</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="/js/employee.js"></script>
+</body>
+</html>

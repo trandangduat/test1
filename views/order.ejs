@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý đơn hàng</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/sidebar.ejs') %>
+
+    <div class="main-content">
+        <header>
+            <h2>Thông tin dự án</h2>
+            <input type="text" id="search-bar" placeholder="Tìm kiếm đơn hàng">
+            <div class="button-group">
+                <button id="view-all">Tất cả đơn hàng</button>
+                <button id="view-shipped">Đơn hàng đã giao</button>
+                <button id="view-not-shipped">Đơn hàng chưa giao</button>
+                <button id="toggle-view">Xem giá trị các đơn hàng</button>
+                <button id="view-product-values">Xem giá trị sản phẩm</button>
+            </div>
+            <div class="date-filter">
+                <input type="date" id="start-date">
+                <input type="date" id="end-date">
+                <button id="filter-date">Lọc theo ngày</button>
+            </div>
+            <div class="revenue-section">
+                <button id="toggle-revenue-calculator">Tính tổng doanh thu</button>
+                <div id="revenue-calculator" class="hidden">
+                    <h3>Tính tổng doanh thu</h3>
+                    <input type="date" id="revenue-start-date">
+                    <input type="date" id="revenue-end-date">
+                    <button id="calculate-revenue">Tính</button>
+                    <div id="total-revenue"></div>
+                </div>
+            </div>
+            <div class="top-customers-section">
+                <button id="toggle-top-customers">Xem khách hàng hàng đầu</button>
+                <div id="top-customers-container" class="hidden">
+                    <h3>5 khách hàng hàng đầu</h3>
+                    <table id="top-customers-table">
+                        <thead>
+                            <tr>
+                                <th>Mã khách hàng</th>
+                                <th>Tên khách hàng</th>
+                                <th>Tổng giá trị</th>
+                            </tr>
+                        </thead>
+                        <tbody id="top-customers-data">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </header>
+        <section class="order-table">
+            <table id="order-table">
+                <thead>
+                    <tr>
+                        <th>Mã đơn hàng</th>
+                        <th>Mã khách hàng</th>
+                        <th>Tên khách hàng</th>
+                        <th>Ngày đặt hàng</th>
+                        <th>Ngày yêu cầu</th>
+                        <th>Địa chỉ ship</th>
+                        <th>Ngày ship hàng</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody id="order-data">
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <div id="order-value-tooltip" style="display: none; position: absolute; background-color: #f9f9f9; border: 1px solid #ccc; padding: 5px; border-radius: 5px;"></div>
+
+    <div id="order-details-modal" class="modal">
+        <div id="order-details-content" class="modal-content">
+        </div>
+    </div>
+
+    <script src="/js/order.js"></script>
+</body>
+</html>
